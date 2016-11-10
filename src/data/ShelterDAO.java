@@ -15,7 +15,6 @@ public interface ShelterDAO {
 	public void getCatByAge(String ca);
 	public void getCatByGender(String cg);
 	public void getCatsBySize(String csz);
-	public void getCatsByLocation(String cloc);
 	public void addDogToShelter(Dog dog);
 	public void removeDogFromShelter(String remD);
 	public void addDogNotes(String addDN);
@@ -23,7 +22,6 @@ public interface ShelterDAO {
 	public void getDogByAge(String da);
 	public void getDogByGender(String dg);
 	public void getBySize(String dsz);
-	public void getDogsByLocation(String dloc);
 	
 	
 }

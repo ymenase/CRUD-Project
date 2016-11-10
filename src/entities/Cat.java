@@ -4,21 +4,19 @@ import java.util.ArrayList;
 
 public class Cat {
 	private String name;
-	private int age;
+	private String age;
 	private String color;
 	private String size;
 	private String gender;
-	private String location;
 	private ArrayList<String> notes;
 	
-	public Cat(String name, int age, String color, String size, String gender, String location) {
+	public Cat(String name, String age, String color, String size, String gender) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.color = color;
 		this.size = size;
 		this.gender = gender;
-		this.location = location;
 	}
 
 
@@ -30,11 +28,11 @@ public class Cat {
 		this.name = name;
 	}
 	
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 
@@ -61,13 +59,6 @@ public class Cat {
 	
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-	public String getLocation(){
-		return location;
-	}
-	
-	public void setLocation(String location) {
-		this.location = location;
 	}
 
 

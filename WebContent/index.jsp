@@ -7,15 +7,24 @@
   </head>
   <body>
 <form action="process.pattern" method="GET">
-	Get All Cats<input type="text" name="param" value="all"><br>
-	Add Cat<input type="text" name="param" value="add"><br>
-	Remove Cat<input type="text" name="param" value="remove"><br>
-	Update Cat Notes<input type="text" name="param" value="update"><br>
-	Get Cat by Age<input type="text" name="param" value="getbyAge"><br>
-	Get Cat by Gender<input type="text" name="param" value="getByGender"><br>
-	Get Cat by Size<input type="text" name="param" value="getBySize"><br>
-	Get Cat by Location<input type="text" name="param" value="getByType"><br>
+	<button class="button" name="param" value="all">Get All Cats</button>
+	<button class="button" name="param" value="add">Add Cat</button>
+	<button class="button" name="param" value="remove">Remove Cat</button>
+	<button class="button" name="param" value="update">Update Cat Notes</button>
+	<button class="button" name="param" value="getbyAge">Get Cat by Age</button>
+	<button class="button" name="param" value="getByGender">Get Cat by Gender</button>
+	<button class="button" name="param" value="getBySize">Get Cat by Size</button>
 	<input type="submit" name="submit" value="submit"/>
 </form>
+
+<c:forEach var="a" items="${cats}">
+${a.name}
+${a.age}
+${a.color}
+${a.size} 
+${a.gender} <br />
+<%-- ${a.notes} --%>
+
+</c:forEach>
   </body>
 </html>

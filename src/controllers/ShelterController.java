@@ -9,16 +9,26 @@ import org.springframework.web.servlet.ModelAndView;
 
 import data.ShelterDAO;
 import entities.Cat;
+import entities.Dog;
 
 @Controller
 public class ShelterController {
 	@Autowired
 	private ShelterDAO shelterDAO;
 	
+	
+	@RequestMapping("index.do")
+	public ModelAndView index(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.jsp");
+		mv.addObject("cats", shelterDAO.getCats());
+		return mv;
+	}
+	
+	
 	@RequestMapping(path = "getAllCats.do", params =  "all", method = RequestMethod.GET)
 	public ModelAndView getAllCats(){
 		ModelAndView mv = new ModelAndView();
-		sh
 		mv.setViewName("index.jsp");
 		mv.addObject("result");
 		return mv;
@@ -78,14 +88,6 @@ public class ShelterController {
 	
 	@RequestMapping(path = "getCatsBySize.do", params = "getBySize", method = RequestMethod.GET)
 	public ModelAndView getCatsBySize(@RequestParam("name") String csz) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("result");
-		return mv;
-	}
-	
-	@RequestMapping(path = "getCatsByLocation.do", params = "getByLocation", method = RequestMethod.GET)
-	public ModelAndView getCatsByLocation(@RequestParam("name") String cloc) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result");
 		mv.addObject("result");
@@ -154,14 +156,6 @@ public class ShelterController {
 	
 	@RequestMapping(path = "getDogBySize.do", params = "getBySize", method = RequestMethod.GET)
 	public ModelAndView getDogBySize(@RequestParam("name") String dsz) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("result");
-		return mv;
-	}
-	
-	@RequestMapping(path = "getDogByLocation.do", params = "getByLocation", method = RequestMethod.GET)
-	public ModelAndView getDogByLocation(@RequestParam("name") String dloc) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result");
 		mv.addObject("result");
