@@ -29,11 +29,9 @@ ${a.name}
 ${a.age}
 ${a.color}
 ${a.size} 
-${a.gender} <br />
+${a.gender}
+${a.note } <br />
 
-	<c:forEach var="note" items="${a.notes}">
-	${note}<br>
-	</c:forEach>
 
 
 		<form action="removeCatFromShelter.do">
@@ -48,15 +46,13 @@ ${a.gender} <br />
 			<button class="button" name="param" value="addCN">Add Cat 
 				Notes</button>
 		</form>
-
 		<form action="updateCatNotes.do">
 			<input type="hidden" name="name" value="${a.name}" />
-			<button class="button" name="param" value="update">Update
+			<button class="button" name="update" value="update">Update
 				Cat Notes</button>
 		</form>
+		<br />
 
-
-		<%-- ${a.notes} --%>
 
 	</c:forEach>
 </body>

@@ -41,7 +41,8 @@ public class ShelterDAOImpl implements ShelterDAO {
 					String color = tokens[2];
 					String size = tokens[3];
 					String gender = tokens[4];
-					Cat cat = new Cat(name, age, color, size, gender);
+					String note = tokens[5];
+					Cat cat = new Cat(name, age, color, size, gender, note);
 					cats.add(cat);
 					System.out.println(cat);
 				}
@@ -99,16 +100,19 @@ public class ShelterDAOImpl implements ShelterDAO {
 				cat = c;
 			}
 		}
-		cat.add(addCN);
+		cat.setNote();
 		return cats;
 		
 	}
 
-	@Override
-	public void updateCatNotes(String updCN) {
-		// TODO Auto-generated method stub
-		
-	}
+	//@Override
+//	public void updateCatNotes(String updCN, String addCN) {
+//		Cat cat = new Cat();
+//		if (addCN != updCN) {
+//			updCN = addCN;
+//		}
+//		System.out.println(addCN);
+//	}
 
 	@Override
 	public void getCatByGender(String cg) {
@@ -191,7 +195,14 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 
 	@Override
-	public ArrayList<Dog> getAllCats() {
+	public ArrayList<Cat> getAllCats() {
+		// TODO Auto-generated method stub
+		return cats;
+	}
+
+
+	@Override
+	public String updateCatNotes(String updCN, String addCN) {
 		// TODO Auto-generated method stub
 		return null;
 	}

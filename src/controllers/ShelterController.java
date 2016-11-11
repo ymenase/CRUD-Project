@@ -59,10 +59,11 @@ public class ShelterController {
 	}
 
 	@RequestMapping(path = "updateCatNotes.do", params = "update", method = RequestMethod.GET)
-	public ModelAndView updateCatNotes(@RequestParam("name") String updCN) {
+	public ModelAndView updateCatNotes(@RequestParam("update") String updCN, @RequestParam("update") String addCN) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		shelterDAO.updateCatNotes(updCN, addCN);
+		mv.addObject("cats", shelterDAO.getCats());
 		return mv;
 	}
 	

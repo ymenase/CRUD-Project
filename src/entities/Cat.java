@@ -8,19 +8,20 @@ public class Cat {
 	private String color;
 	private String size;
 	private String gender;
-	private ArrayList<String> notes = new ArrayList<>();
+	private String note;
 	
 	public Cat(){
 		
 	}
 	
-	public Cat(String name, String age, String color, String size, String gender) {
+	public Cat(String name, String age, String color, String size, String gender, String note) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.color = color;
 		this.size = size;
 		this.gender = gender;
+		this.note = note;
 	}
 
 
@@ -66,17 +67,12 @@ public class Cat {
 	}
 
 
-	public ArrayList<String> getNotes() {
-		return notes;
-	}
-
-
-	public void setNotes(ArrayList<String> notes) {
-		this.notes = notes;
+	public String getNote(){
+		return note;
 	}
 	
-	public void add(String note){
-		notes.add(note);
+	public void setNote(){
+		this.note = note;
 	}
-	
+		
 }

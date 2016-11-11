@@ -41,15 +41,14 @@ ${a.gender} <br />
 			<button class="button" name="param" value="addCN">Add Dog 
 				Notes</button>
 		</form>
-
+		
 		<form action="updateDogNotes.do">
 			<input type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="param" value="update">Update
 				Dog Notes</button>
 		</form>
+		<br />
 
-
-		<%-- ${a.notes} --%>
 
 	</c:forEach>
 </body>

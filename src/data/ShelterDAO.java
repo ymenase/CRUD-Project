@@ -11,7 +11,7 @@ public interface ShelterDAO {
 	public ArrayList<Cat> addCatToShelter(Cat cat);
 	public ArrayList<Cat> removeCatFromShelter(String rc);
 	public ArrayList<Cat> addCatNotes(String addCN, String catName);
-	public void updateCatNotes (String updCN);
+	public String updateCatNotes (String updCN, String addCN);
 	public void getCatByGender(String cg);
 	public void getCatsBySize(String csz);
 	public ArrayList<Dog> addDogToShelter(Dog dog);
@@ -21,7 +21,7 @@ public interface ShelterDAO {
 	public void getDogByGender(String dg);
 	public void getBySize(String dsz);
 	public ArrayList<Dog> getAllDogs();
-	public ArrayList<Dog> getAllCats();
+	public ArrayList<Cat> getAllCats();
 	
 	
 	
