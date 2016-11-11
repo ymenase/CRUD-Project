@@ -11,14 +11,13 @@ public interface ShelterDAO {
 	public ArrayList<Cat> addCatToShelter(Cat cat);
 	public ArrayList<Cat> removeCatFromShelter(String rc);
 	public ArrayList<Cat> updateCatNotes (String note, String name);
-	public void getCatByGender(String cg);
-	public void getCatsBySize(String csz);
+	public ArrayList<Cat> getCatsByGender(String cg);
+	public ArrayList<Cat> getCatsBySize(String csize);
 	public ArrayList<Dog> addDogToShelter(Dog dog);
 	public ArrayList<Dog> removeDogFromShelter(String remD);
-	public void addDogNotes(String addDN, String dogNam);
 	public void updateDogNotes (String updDN);
 	public void getDogByGender(String dg);
-	public void getBySize(String dsz);
+	public void getDogByBreed(String gbb);
 	public ArrayList<Dog> getAllDogs();
 	public ArrayList<Cat> getAllCats();
 	

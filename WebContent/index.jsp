@@ -11,8 +11,17 @@
 	<!-- 	<button class="button" name="param" value="remove">Remove Cat</button>
 	<button class="button" name="param" value="update">Update Cat Notes</button> -->
 	<h1>Search Filters:</h1>
-	<button class="button" name="param" value="getByGender">Get
-		Cat by Gender</button>
+
+	<form action="filterCatsByGender.do">
+		Filter By Gender <select name="gender">
+			<option value="select">Select...</option>
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>
+		</select>
+		<input type="submit" value="submit">
+	</form>
+	
+	
 	<button class="button" name="param" value="getBySize">Get Cat
 		by Size</button>
 
@@ -20,10 +29,10 @@
 	<form method="link" action="addCat.jsp">
 		<input type="submit" value="Add Cat">
 	</form>
-	
+
 	<h1>Actions to Take on Current Cats</h1>
 	<c:forEach var="a" items="${cats}">
-<strong>${a.name}</strong>
+		<strong>${a.name}</strong>
 ${a.age}
 ${a.color}
 ${a.size} 
@@ -38,8 +47,8 @@ ${a.gender}
 		</form>
 
 		<form action="updateCatNotes.do">
-			<input type="text" name="note" value="${a.note}" />
-			<input type="hidden" name="name" value="${a.name}" />
+			<input type="text" name="note" value="${a.note}" /> <input
+				type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="update" value="update">Update
 				Cat Notes</button>
 		</form>

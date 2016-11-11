@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,14 +52,6 @@ public class ShelterController {
 		
 	}
 
-//	@RequestMapping(path = "updateCatNotes.do", params = "update", method = RequestMethod.GET)
-//	public ModelAndView updateCatNotes(@RequestParam("cats") int index, @RequestParam("update") Cat updCN) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("index.jsp");
-//		shelterDAO.updateCatNotes(5, updCN);
-//		mv.addObject("cats", shelterDAO.getCats());
-//		return mv;
-//	}
 	
 	@RequestMapping(path = "updateCatNotes.do", method = RequestMethod.GET)
 	public ModelAndView updateCatNotes(@RequestParam("note") String note, @RequestParam("name") String name){
@@ -68,18 +62,19 @@ public class ShelterController {
 	}
 	
 
-	@RequestMapping(path = "getCatByGender.do", params = "getByGender", method = RequestMethod.GET)
-	public ModelAndView getCatByGender(@RequestParam("name") String cg) {
+	@RequestMapping(path = "filterCatsByGender.do", method = RequestMethod.GET)
+	public ModelAndView getCatsByGender(@RequestParam("gender") String cg) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result"); //add to filteredarray
-		
+		mv.setViewName("filteredCatsG.jsp");
+		ArrayList<Cat> filteredCats = shelterDAO.getCatsByGender(cg);
+		System.out.println(filteredCats);
+		mv.addObject("catsByGender", filteredCats); //add to filteredarray
 		return mv;
 	}
 	
 	
-	@RequestMapping(path = "getCatsBySize.do", params = "getBySize", method = RequestMethod.GET)
-	public ModelAndView getCatsBySize(@RequestParam("name") String csz) {
+	@RequestMapping(path = "filterCatsBySize.do", params = "getBySize", method = RequestMethod.GET)
+	public ModelAndView getCatsBySize(@RequestParam("size") String csize) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result");
 		mv.addObject("result");
@@ -125,8 +120,8 @@ public class ShelterController {
 	}
 	
 	
-	@RequestMapping(path = "getDogBySize.do", params = "getBySize", method = RequestMethod.GET)
-	public ModelAndView getDogBySize(@RequestParam("name") String dsz) {
+	@RequestMapping(path = "getDogByBreed.do", params = "getBySize", method = RequestMethod.GET)
+	public ModelAndView getDogByBreed(@RequestParam("name") String dsz) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result");
 		mv.addObject("result");

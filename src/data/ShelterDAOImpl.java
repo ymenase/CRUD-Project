@@ -106,13 +106,19 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void getCatByGender(String cg) {
-		// TODO Auto-generated method stub
-
+	public ArrayList<Cat> getCatsByGender(String cg) {
+		ArrayList<Cat> filteredCats = new ArrayList<Cat>();
+		for (Cat c : cats){ //iterate over stored cats
+			if (c.getGender().equals(cg)) {
+				filteredCats.add(c);
+			}
+		}
+		return filteredCats;
 	}
 
 	@Override
-	public void getCatsBySize(String csz) {
+	public ArrayList<Cat> getCatsBySize(String csize) {
+		return cats;
 		// TODO Auto-generated method stub
 
 	}
@@ -139,18 +145,6 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void addDogNotes(String addDN, String dogName) {
-		Dog dog = new Dog();
-		for (Dog d : dogs) {
-			if (d.getName().equals(dogName)) {
-				dog = d;
-			}
-		}
-		dog.add(addDN);
-
-	}
-
-	@Override
 	public void updateDogNotes(String updDN) {
 		// TODO Auto-generated method stub
 
@@ -163,7 +157,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void getBySize(String dsz) {
+	public void getDogByBreed(String dbb) {
 		// TODO Auto-generated method stub
 
 	}
