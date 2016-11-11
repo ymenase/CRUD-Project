@@ -67,17 +67,17 @@ public class ShelterController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("filteredCatsG.jsp");
 		ArrayList<Cat> filteredCats = shelterDAO.getCatsByGender(cg);
-		System.out.println(filteredCats);
 		mv.addObject("catsByGender", filteredCats); //add to filteredarray
 		return mv;
 	}
 	
 	
-	@RequestMapping(path = "filterCatsBySize.do", params = "getBySize", method = RequestMethod.GET)
+	@RequestMapping(path = "filterCatsBySize.do", method = RequestMethod.GET)
 	public ModelAndView getCatsBySize(@RequestParam("size") String csize) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("result");
+		mv.setViewName("filteredCatsS.jsp");
+		ArrayList<Cat> filteredCatsS = shelterDAO.getCatsBySize(csize);
+		mv.addObject("catsBySize", filteredCatsS);
 		return mv;
 	}
 	

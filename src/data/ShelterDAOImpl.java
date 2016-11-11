@@ -118,9 +118,13 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@Override
 	public ArrayList<Cat> getCatsBySize(String csize) {
-		return cats;
-		// TODO Auto-generated method stub
-
+		ArrayList<Cat> filteredCatsS = new ArrayList<Cat>();
+		for (Cat c : cats) {
+			if (c.getSize().equals(csize)) {
+				filteredCatsS.add(c);
+			}
+		}
+		return filteredCatsS;
 	}
 
 	@Override
@@ -145,8 +149,15 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void updateDogNotes(String updDN) {
-		// TODO Auto-generated method stub
+	public ArrayList<Dog> updateDogNotes(String note, String name) {
+		Dog dog = new Dog();
+		for (Dog d : dogs) {
+			if (d.getName().equals(name)) {
+				dog = d;
+			}
+		}
+		dog.setNote(note); //set note info
+		return dogs; //return list to controller
 
 	}
 

@@ -6,10 +6,6 @@
 <title>View</title>
 </head>
 <body>
-	<!-- <button class="button" name="param" value="all">Get All Cats</button> -->
-	<!-- <button class="button" name="param" value="add">Add Cat</button> -->
-	<!-- 	<button class="button" name="param" value="remove">Remove Cat</button>
-	<button class="button" name="param" value="update">Update Cat Notes</button> -->
 	<h1>Search Filters:</h1>
 
 	<form action="filterCatsByGender.do">
@@ -22,8 +18,15 @@
 	</form>
 	
 	
-	<button class="button" name="param" value="getBySize">Get Cat
-		by Size</button>
+	<form action="filterCatsBySize.do">
+		Filter By Size <select name="size">
+			<option value="select">Select...</option>
+			<option value="Small">Small</option>
+			<option value="Medium">Medium</option>
+			<option value="Large">Large</option>
+		</select>
+		<input type="submit" value="submit">
+	</form>
 
 	<h1>New Arrivals</h1>
 	<form method="link" action="addCat.jsp">
