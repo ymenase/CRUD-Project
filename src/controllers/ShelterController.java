@@ -49,21 +49,21 @@ public class ShelterController {
 		return mv;
 		
 	}
-	@RequestMapping(path = "addCatNotes.do", params = "notes", method = RequestMethod.GET)
-	public ModelAndView addCatNotes(@RequestParam("notes") String addCN, @RequestParam("catName") String catName) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		shelterDAO.addCatNotes(addCN, catName);
-		mv.addObject("cats", shelterDAO.getCats());
-		return mv;
-	}
 
-	@RequestMapping(path = "updateCatNotes.do", params = "update", method = RequestMethod.GET)
-	public ModelAndView updateCatNotes(@RequestParam("update") String updCN, @RequestParam("update") String addCN) {
+//	@RequestMapping(path = "updateCatNotes.do", params = "update", method = RequestMethod.GET)
+//	public ModelAndView updateCatNotes(@RequestParam("cats") int index, @RequestParam("update") Cat updCN) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("index.jsp");
+//		shelterDAO.updateCatNotes(5, updCN);
+//		mv.addObject("cats", shelterDAO.getCats());
+//		return mv;
+//	}
+	
+	@RequestMapping(path = "updateCatNotes.do", method = RequestMethod.GET)
+	public ModelAndView updateCatNotes(@RequestParam("note") String note, @RequestParam("name") String name){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		shelterDAO.updateCatNotes(updCN, addCN);
-		mv.addObject("cats", shelterDAO.getCats());
+		mv.addObject("cats", shelterDAO.updateCatNotes(note, name)); //return cats from DAO and updated note view
 		return mv;
 	}
 	
@@ -72,7 +72,8 @@ public class ShelterController {
 	public ModelAndView getCatByGender(@RequestParam("name") String cg) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.addObject("result"); //add to filteredarray
+		
 		return mv;
 	}
 	
@@ -102,13 +103,7 @@ public class ShelterController {
 		return mv;
 		
 	}
-	@RequestMapping(path = "addDogNotes.do", params = "notes", method = RequestMethod.GET)
-	public ModelAndView addDogNotes(@RequestParam("name") String addDN) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("result");
-		return mv;
-	}
+
 
 	@RequestMapping(path = "updateDogNotes.do", params = "update", method = RequestMethod.GET)
 	public ModelAndView updateDogNotes(@RequestParam("name") String updateDN) {

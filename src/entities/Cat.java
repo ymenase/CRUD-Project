@@ -71,7 +71,7 @@ public class Cat {
 		return note;
 	}
 	
-	public void setNote(){
+	public void setNote(String note){
 		this.note = note;
 	}
 		

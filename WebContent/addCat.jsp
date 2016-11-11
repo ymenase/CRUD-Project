@@ -10,7 +10,7 @@
 <form action="addCatToShelter.do">
 Name <input type="text" name ="name" value=""/>
 Age<input type="text" name ="age" value=""/>
-Color <select>
+Color <select name ="color">
   <option value="select">Select...</option>
   <option value="brown">Brown</option>
   <option value="black">Black</option>
@@ -20,14 +20,14 @@ Color <select>
   <option value="tortoiseshell">Tortoiseshell</option>
   <option value="tuxedo">Tuxedo</option>
 	</select>
-Size <select>
+Size <select name="size">
   <option value="select">Select...</option>
   <option value="small">Small</option>
   <option value="medium">Medium</option>
   <option value="large">Large</option>
 	</select>
 
-Gender <select>
+Gender <select name="gender">
   <option value="select">Select...</option>
   <option value="female">Female</option>
   <option value="male">Male</option>

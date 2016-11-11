@@ -11,8 +11,6 @@
 	<!-- 	<button class="button" name="param" value="remove">Remove Cat</button>
 	<button class="button" name="param" value="update">Update Cat Notes</button> -->
 	<h1>Search Filters:</h1>
-	<button class="button" name="param" value="getbyAge">Get Cat
-		by Age</button>
 	<button class="button" name="param" value="getByGender">Get
 		Cat by Gender</button>
 	<button class="button" name="param" value="getBySize">Get Cat
@@ -25,12 +23,12 @@
 	
 	<h1>Actions to Take on Current Cats</h1>
 	<c:forEach var="a" items="${cats}">
-${a.name}
+<strong>${a.name}</strong>
 ${a.age}
 ${a.color}
 ${a.size} 
 ${a.gender}
-${a.note } <br />
+<br />
 
 
 
@@ -39,14 +37,8 @@ ${a.note } <br />
 				Cat</button>
 		</form>
 
-		<form action="addCatNotes.do">
-			<input type="hidden" name="catName" value="${a.name}" />
-			<input type="text" name="notes" value="" />
-			
-			<button class="button" name="param" value="addCN">Add Cat 
-				Notes</button>
-		</form>
 		<form action="updateCatNotes.do">
+			<input type="text" name="note" value="${a.note}" />
 			<input type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="update" value="update">Update
 				Cat Notes</button>
