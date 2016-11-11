@@ -16,7 +16,7 @@ public interface ShelterDAO {
 	public ArrayList<Dog> addDogToShelter(Dog dog);
 	public ArrayList<Dog> removeDogFromShelter(String remD);
 	public ArrayList<Dog> updateDogNotes (String note, String name);
-	public ArrayList<Dog> getDogByGender(String dg);
+	public ArrayList<Dog> getDogsByGender(String dg);
 	public ArrayList<Dog> getDogByBreed(String gbb);
 	public ArrayList<Dog> getAllDogs();
 	public ArrayList<Cat> getAllCats();

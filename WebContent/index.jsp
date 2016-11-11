@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>View</title>
+<title>Cat List</title>
 </head>
 <body>
 	<h1>Search Filters:</h1>
@@ -16,7 +16,6 @@
 		</select>
 		<input type="submit" value="submit">
 	</form>
-	
 	
 	<form action="filterCatsBySize.do">
 		Filter By Size <select name="size">
@@ -42,13 +41,10 @@ ${a.size}
 ${a.gender}
 <br />
 
-
-
 		<form action="removeCatFromShelter.do">
 			<button class="button" name="remove" value="${a.name}">Remove
 				Cat</button>
 		</form>
-
 		<form action="updateCatNotes.do">
 			<input type="text" name="note" value="${a.note}" /> <input
 				type="hidden" name="name" value="${a.name}" />
@@ -56,7 +52,6 @@ ${a.gender}
 				Cat Notes</button>
 		</form>
 		<br />
-
 
 	</c:forEach>
 </body>

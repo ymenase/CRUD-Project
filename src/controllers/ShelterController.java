@@ -100,31 +100,33 @@ public class ShelterController {
 	}
 
 
-	@RequestMapping(path = "updateDogNotes.do", params = "update", method = RequestMethod.GET)
-	public ModelAndView updateDogNotes(@RequestParam("name") String updateDN) {
+	@RequestMapping(path = "updateDogNotes.do",  method = RequestMethod.GET)
+	public ModelAndView updateDogNotes(@RequestParam("note") String note, @RequestParam("name") String name) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.setViewName("dogs.jsp");
+		mv.addObject("dogs", shelterDAO.updateDogNotes(note, name));
 		return mv;
 	}
 	
 
 	
 
-	@RequestMapping(path = "getDogByGender.do", params = "getByGender", method = RequestMethod.GET)
-	public ModelAndView getDogByGender(@RequestParam("name") String dg) {
+	@RequestMapping(path = "filterDogsByGender.do", method = RequestMethod.GET)
+	public ModelAndView getDogByGender(@RequestParam("gender") String dg) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.setViewName("filteredDogsG.jsp");
+		ArrayList<Dog> filteredDogs = shelterDAO.getDogsByGender(dg);
+		mv.addObject("dogsByGender", filteredDogs);
 		return mv;
 	}
+
 	
-	
-	@RequestMapping(path = "getDogByBreed.do", params = "getBySize", method = RequestMethod.GET)
-	public ModelAndView getDogByBreed(@RequestParam("name") String dsz) {
+	@RequestMapping(path = "getDogByBreed.do", method = RequestMethod.GET)
+	public ModelAndView getDogByBreed(@RequestParam("breed") String gbb) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("result");
+		mv.setViewName("filteredDogsB.jsp");
+		ArrayList<Dog> filteredDogsB = shelterDAO.getDogByBreed(gbb);
+		mv.addObject("dogsByBreed", filteredDogsB);
 		return mv;
 	}
 }

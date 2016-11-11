@@ -62,7 +62,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 				String breed = tokens[2];
 				String gender = tokens[3];
 				String note = tokens[4];
-				Dog dog = new Dog(name, age, breed, gender);
+				Dog dog = new Dog(name, age, breed, gender, note);
 				dogs.add(dog);
 				System.out.println(dog);
 			}
@@ -162,14 +162,20 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void getDogByGender(String dg) {
-		// TODO Auto-generated method stub
+	public ArrayList<Dog> getDogsByGender(String dg) {
+		ArrayList<Dog> filteredDogs = new ArrayList<Dog>();
+		for (Dog d : dogs){ //iterate over stored dogs
+			if (d.getGender().equals(dg)) {
+				filteredDogs.add(d);
+			}
+		}
+		return filteredDogs;
 
 	}
 
 	@Override
-	public void getDogByBreed(String dbb) {
-		// TODO Auto-generated method stub
+	public ArrayList<Dog> getDogByBreed(String dbb) {
+		return dogs;
 
 	}
 

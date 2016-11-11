@@ -8,7 +8,6 @@ public class Dog {
 	private String breed;
 	private String gender;
 	private String note;
-	private ArrayList<String> notes = new ArrayList<>();
 	
 	public Dog(String name, String age, String breed, String gender, String note) {
 		super();

@@ -7,48 +7,50 @@
 </head>
 <body>
 	<h1>Search Filters:</h1>
-	<button class="button" name="param" value="getByGender">Get
-		Dog by Gender</button>
-	<button class="button" name="param" value="getBySize">Get Dog
-		by Size</button>
+	<form action="filterDogsByGender.do">
+		Filter By Gender <select name="gender">
+			<option value="select">Select...</option>
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>
+		</select>
+		<input type="submit" value="submit">
+	</form>
+	
+	<form action="filterDogsByBreed.do">
+		Filter By Size <select name="breed">
+			<option value="select">Select...</option>
+			<option value="chihuahua">Chihuahua</option>
+			<option value="germanShepard">German Shepard"</option>
+			<option value="havanese">Havanese</option>
+			<option value="labrador">Labrador</option>
+			<option value="other">Other</option>
+		</select>
+		<input type="submit" value="submit">
+	</form>
 
 	<h1>New Arrivals</h1>
 	<form method="link" action="addDog.jsp">
 		<input type="submit" value="Add Dog">
 	</form>
-	
+
 	<h1>Actions to Take on Current Dogs</h1>
 	<c:forEach var="a" items="${dogs}">
-${a.name}
+		<strong>${a.name}</strong>
 ${a.age}
 ${a.breed}
 ${a.gender} <br />
-
-	<c:forEach var="note" items="${a.notes}">
-	${note}<br>
-	</c:forEach>
-
 
 		<form action="removeDogFromShelter.do">
 			<button class="button" name="remove" value="${a.name}">Remove
 				Dog</button>
 		</form>
-
-		<form action="addDogNotes.do">
-			<input type="hidden" name="dogName" value="${a.name}" />
-			<input type="text" name="notes" value="" />
-			
-			<button class="button" name="param" value="addCN">Add Dog 
-				Notes</button>
-		</form>
-		
 		<form action="updateDogNotes.do">
-			<input type="hidden" name="name" value="${a.name}" />
-			<button class="button" name="param" value="update">Update
+			<input type="text" name="note" value="${a.note}" /> <input
+				type="hidden" name="name" value="${a.name}" />
+			<button class="button" name="update" value="update">Update
 				Dog Notes</button>
 		</form>
 		<br />
-
 
 	</c:forEach>
 </body>
