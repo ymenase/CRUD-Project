@@ -14,6 +14,5 @@ Here are your dogs<br/>
 ${dogB.age}</br>
 ${dogB.breed}</br>
 ${dogB.gender} </br>
-${dogB.note}</br>
 	</c:forEach>
 </body>

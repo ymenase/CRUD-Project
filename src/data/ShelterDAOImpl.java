@@ -18,11 +18,8 @@ public class ShelterDAOImpl implements ShelterDAO {
 	private static final String FILE_NAME2 = "/WEB-INF/dogs.csv";
 	ArrayList<Cat> cats = new ArrayList<>();
 	ArrayList<Dog> dogs = new ArrayList<>();
-	// public ArrayList<Cat> getCats(){
-	// return cats;
 
 	public ShelterDAOImpl() {
-		System.out.println("LOADED");
 	}
 
 	@Autowired
@@ -30,7 +27,6 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@PostConstruct
 	public void init() {
-		System.out.println("test");
 		try (InputStream is = wac.getServletContext().getResourceAsStream(FILE_NAME);
 
 				BufferedReader buf = new BufferedReader(new InputStreamReader(is));) {
@@ -101,7 +97,24 @@ public class ShelterDAOImpl implements ShelterDAO {
 				cat = c;
 			}
 		}
-		cat.setNote(note); //set note info
+		StringBuilder sb = new StringBuilder();
+		String oldNote = cat.getNote();
+		sb.append(oldNote);
+		sb.append(" ");
+		sb.append(note);
+		sb.append(" ");
+		cat.setNote(sb.toString());
+		return cats; //return list to controller
+	}
+	@Override
+	public ArrayList<Cat> clearCatNotes(String name) {
+		Cat cat = new Cat();
+		for (Cat c : cats) {
+			if (c.getName().equals(name)) {
+				cat = c;
+			}
+		}
+		cat.setNote("");
 		return cats; //return list to controller
 	}
 
@@ -156,11 +169,27 @@ public class ShelterDAOImpl implements ShelterDAO {
 				dog = d;
 			}
 		}
-		dog.setNote(note); //set note info
-		return dogs; //return list to controller
-
+		StringBuilder sb = new StringBuilder();
+		String oldNote = dog.getNote();
+		sb.append(oldNote);
+		sb.append(" ");
+		sb.append(note);
+		sb.append(" ");
+		dog.setNote(sb.toString());
+		return dogs;
 	}
 
+	@Override
+	public ArrayList<Dog> clearDogNotes(String name) {
+		Dog dog = new Dog();
+		for (Dog d : dogs) {
+			if (d.getName().equals(name)) {
+				dog = d;
+			}
+		}
+		dog.setNote("");
+		return dogs; //return list to controller
+	}
 	@Override
 	public ArrayList<Dog> getDogsByGender(String dg) {
 		ArrayList<Dog> filteredDogs = new ArrayList<Dog>();
@@ -175,9 +204,16 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@Override
 	public ArrayList<Dog> getDogByBreed(String dbb) {
-		return dogs;
-
+		ArrayList<Dog> filteredDogsB = new ArrayList<Dog>();
+		for (Dog d : dogs) {
+			if (d.getBreed().equals(dbb)) {
+				filteredDogsB.add(d);
+			}
+		}
+		System.out.println(filteredDogsB);
+		return filteredDogsB;
 	}
+
 
 	@Override
 	public ArrayList<Cat> getCats() {

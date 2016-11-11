@@ -13,18 +13,16 @@
 			<option value="select">Select...</option>
 			<option value="Female">Female</option>
 			<option value="Male">Male</option>
-		</select>
-		<input type="submit" value="submit">
+		</select> <input type="submit" value="submit">
 	</form>
-	
+
 	<form action="filterCatsBySize.do">
 		Filter By Size <select name="size">
 			<option value="select">Select...</option>
 			<option value="Small">Small</option>
 			<option value="Medium">Medium</option>
 			<option value="Large">Large</option>
-		</select>
-		<input type="submit" value="submit">
+		</select> <input type="submit" value="submit">
 	</form>
 
 	<h1>New Arrivals</h1>
@@ -46,11 +44,17 @@ ${a.gender}
 				Cat</button>
 		</form>
 		<form action="updateCatNotes.do">
-			<input type="text" name="note" value="${a.note}" /> <input
-				type="hidden" name="name" value="${a.name}" />
+			Current Note: ${a.note} <br /> <input type="text" name="note"
+				value="" /> <input type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="update" value="update">Update
 				Cat Notes</button>
 		</form>
+
+		<form action="clearCatNotes.do">
+			<button class="button" name="clear" value="${a.name}">Clear
+				Cat Notes</button>
+		</form>
+
 		<br />
 
 	</c:forEach>

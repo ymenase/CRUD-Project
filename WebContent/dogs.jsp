@@ -12,20 +12,18 @@
 			<option value="select">Select...</option>
 			<option value="Female">Female</option>
 			<option value="Male">Male</option>
-		</select>
-		<input type="submit" value="submit">
+		</select> <input type="submit" value="submit">
 	</form>
-	
-	<form action="filterDogsByBreed.do">
-		Filter By Size <select name="breed">
+
+	<form action="filteredDogsByBreed.do">
+		Filter By Breed <select name="breed">
 			<option value="select">Select...</option>
-			<option value="chihuahua">Chihuahua</option>
-			<option value="germanShepard">German Shepard"</option>
-			<option value="havanese">Havanese</option>
-			<option value="labrador">Labrador</option>
-			<option value="other">Other</option>
-		</select>
-		<input type="submit" value="submit">
+			<option value="Ghihuahua">Chihuahua</option>
+			<option value="German Shepard">German Shepard</option>
+			<option value="Havanese">Havanese</option>
+			<option value="Labrador">Labrador</option>
+			<option value="Other">Other</option>
+		</select> <input type="submit" value="submit">
 	</form>
 
 	<h1>New Arrivals</h1>
@@ -45,9 +43,13 @@ ${a.gender} <br />
 				Dog</button>
 		</form>
 		<form action="updateDogNotes.do">
-			<input type="text" name="note" value="${a.note}" /> <input
-				type="hidden" name="name" value="${a.name}" />
+			Current Note: ${a.note} <br /> <input type="text" name="note"
+				value="" /> <input type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="update" value="update">Update
+				Dog Notes</button>
+		</form>
+		<form action="clearDogNotes.do">
+			<button class="button" name="clear" value="${a.name}">Clear
 				Dog Notes</button>
 		</form>
 		<br />

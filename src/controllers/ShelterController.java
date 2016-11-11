@@ -60,6 +60,13 @@ public class ShelterController {
 		mv.addObject("cats", shelterDAO.updateCatNotes(note, name)); //return cats from DAO and updated note view
 		return mv;
 	}
+	@RequestMapping(path = "clearCatNotes.do", method = RequestMethod.GET)
+	public ModelAndView clearCatNotes(@RequestParam("clear") String name){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.jsp");
+		mv.addObject("cats", shelterDAO.clearCatNotes(name)); //return cats from DAO and updated note view
+		return mv;
+	}
 	
 
 	@RequestMapping(path = "filterCatsByGender.do", method = RequestMethod.GET)
@@ -108,7 +115,13 @@ public class ShelterController {
 		return mv;
 	}
 	
-
+	@RequestMapping(path = "clearDogNotes.do", method = RequestMethod.GET)
+	public ModelAndView clearDogNotes(@RequestParam("clear") String name){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.jsp");
+		mv.addObject("cats", shelterDAO.clearCatNotes(name)); //return cats from DAO and updated note view
+		return mv;
+	}
 	
 
 	@RequestMapping(path = "filterDogsByGender.do", method = RequestMethod.GET)
@@ -121,12 +134,13 @@ public class ShelterController {
 	}
 
 	
-	@RequestMapping(path = "getDogByBreed.do", method = RequestMethod.GET)
+	@RequestMapping(path = "filteredDogsByBreed.do", method = RequestMethod.GET)
 	public ModelAndView getDogByBreed(@RequestParam("breed") String gbb) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("filteredDogsB.jsp");
 		ArrayList<Dog> filteredDogsB = shelterDAO.getDogByBreed(gbb);
 		mv.addObject("dogsByBreed", filteredDogsB);
+//		System.out.println(filteredDogsB);
 		return mv;
 	}
 }
