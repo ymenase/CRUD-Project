@@ -15,7 +15,9 @@ import entities.Dog;
 
 public class ShelterDAOImpl implements ShelterDAO {
 	private static final String FILE_NAME = "/WEB-INF/cats.csv";
+	private static final String FILE_NAME2 = "/WEB-INF/dogs.csv";
 	ArrayList <Cat> cats = new ArrayList<>();
+	ArrayList <Dog> dogs = new ArrayList<>();
 //	public ArrayList<Cat> getCats(){
 //		return cats;
 		
@@ -46,6 +48,24 @@ public class ShelterDAOImpl implements ShelterDAO {
 			} catch (Exception e) {
 				System.err.println(e);
 			}
+			
+			try (InputStream is = wac.getServletContext().getResourceAsStream(FILE_NAME2);
+					
+					BufferedReader buf = new BufferedReader(new InputStreamReader(is));) {
+				String line = buf.readLine();
+				while ((line = buf.readLine()) != null) {
+					String[] tokens = line.split(",");
+					String name = tokens[0];
+					String age = tokens[1];
+					String breed = tokens[2];
+					String gender = tokens[4];
+					Dog dog = new Dog(name, age, breed, gender);
+					dogs.add(dog);
+					System.out.println(dog);
+				}
+			} catch (Exception e) {
+				System.err.println(e);
+			}
 		}
 
 	@Override
@@ -66,7 +86,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@Override
 	public ArrayList<Cat> removeCatFromShelter(String rc) {
-		Cat cat = null;
+		Cat cat = new Cat();
 		for (Cat c: cats) {
 			if (c.getName().equals(rc)) {
 				cat = c;
@@ -77,11 +97,14 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public ArrayList<Cat> addCatNotes(String addCN) {
-//		cats.add(addCN);
+	public ArrayList<Cat> addCatNotes(String addCN, String catName) {
+		Cat cat = new Cat();
 		for (Cat c: cats) {
-			
+			if (c.getName().equals(catName)) {
+				cat = c;
+			}
 		}
+		cat.add(addCN);
 		return cats;
 		
 	}
@@ -89,12 +112,6 @@ public class ShelterDAOImpl implements ShelterDAO {
 	@Override
 	public void updateCatNotes(String updCN) {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getCatByAge(String ca) {
-		
 		
 	}
 
@@ -111,31 +128,41 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void addDogToShelter(Dog dog) {
-		// TODO Auto-generated method stub
+	public ArrayList <Dog> addDogToShelter(Dog dog) {
+		dogs.add(dog);
+		for (Dog d : dogs) {
+			System.out.println(d);
+		}
+		return dogs;
+	}
+
+	@Override
+	public ArrayList <Dog> removeDogFromShelter(String remD) {
+		Dog dog = new Dog();
+		for (Dog d: dogs) {
+			if (d.getName().equals(remD)) {
+				dog = d;
+			}
+		}
+		dogs.remove(dog);
+		return dogs;
 		
 	}
 
 	@Override
-	public void removeDogFromShelter(String remD) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addDogNotes(String addDN) {
-		// TODO Auto-generated method stub
+	public void addDogNotes(String addDN, String dogName) {
+		Dog dog = new Dog();
+		for (Dog d: dogs) {
+			if (d.getName().equals(dogName)) {
+				dog = d;
+			}
+		}
+		dog.add(addDN);
 		
 	}
 
 	@Override
 	public void updateDogNotes(String updDN) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void getDogByAge(String da) {
 		// TODO Auto-generated method stub
 		
 	}

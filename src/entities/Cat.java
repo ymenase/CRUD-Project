@@ -8,7 +8,7 @@ public class Cat {
 	private String color;
 	private String size;
 	private String gender;
-	private ArrayList<String> notes;
+	private ArrayList<String> notes = new ArrayList<>();
 	
 	public Cat(){
 		

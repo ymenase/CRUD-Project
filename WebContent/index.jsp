@@ -31,6 +31,11 @@ ${a.color}
 ${a.size} 
 ${a.gender} <br />
 
+	<c:forEach var="note" items="${a.notes}">
+	${note}<br>
+	</c:forEach>
+
+
 		<form action="removeCatFromShelter.do">
 			<input type="hidden" name="name" value="${a.name}" />
 			<button class="button" name="param" value="remove">Remove
@@ -38,8 +43,8 @@ ${a.gender} <br />
 		</form>
 
 		<form action="addCatNotes.do">
-			<input type="hidden" name="name" value="${a.name}" />
-			<input type="text" name="text" value="" />
+			<input type="hidden" name="catName" value="${a.name}" />
+			<input type="text" name="notes" value="" />
 			
 			<button class="button" name="param" value="addCN">Add Cat 
 				Notes</button>

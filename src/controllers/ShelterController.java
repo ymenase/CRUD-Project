@@ -17,11 +17,18 @@ public class ShelterController {
 	private ShelterDAO shelterDAO;
 	
 	
-	@RequestMapping("index.do")
-	public ModelAndView index(){
+	@RequestMapping("catsIndex.do")
+	public ModelAndView catsIndex(){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
 		mv.addObject("cats", shelterDAO.getCats());
+		return mv;
+	}
+	@RequestMapping("dogsIndex.do")
+	public ModelAndView dogsIndex(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("dogs.jsp");
+		mv.addObject("dogs", shelterDAO.getDogs());
 		return mv;
 	}
 	
@@ -42,7 +49,6 @@ public class ShelterController {
 		return mv;
 	}
 	
-
 	@RequestMapping("removeCatFromShelter.do")
 	public ModelAndView removeCatFromShelter(@RequestParam("name") String rc) {
 		ModelAndView mv = new ModelAndView();
@@ -52,24 +58,16 @@ public class ShelterController {
 		
 	}
 	@RequestMapping(path = "addCatNotes.do", params = "notes", method = RequestMethod.GET)
-	public ModelAndView addCatNotes(String addCN) {
+	public ModelAndView addCatNotes(@RequestParam("notes") String addCN, @RequestParam("catName") String catName) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result");
-		mv.addObject("cats", shelterDAO.addCatNotes(addCN));
+		mv.setViewName("index.jsp");
+		shelterDAO.addCatNotes(addCN, catName);
+		mv.addObject("cats", shelterDAO.getCats());
 		return mv;
 	}
 
 	@RequestMapping(path = "updateCatNotes.do", params = "update", method = RequestMethod.GET)
 	public ModelAndView updateCatNotes(@RequestParam("name") String updCN) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
-		return mv;
-	}
-	
-
-	@RequestMapping(path = "getCatByAge.do", params = "getByAge", method = RequestMethod.GET)
-	public ModelAndView getCatByAge(@RequestParam("name") String ca) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
 		mv.addObject("result");
@@ -97,7 +95,7 @@ public class ShelterController {
 	@RequestMapping(path = "getAllDogs.do", params =  "all", method = RequestMethod.GET)
 	public ModelAndView getAllDogs(){
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
+		mv.setViewName("dogs.jsp");
 		mv.addObject("result");
 		return mv;
 	}
@@ -105,8 +103,8 @@ public class ShelterController {
 	@RequestMapping(path = "addDogToShelter.do", params = "add", method = RequestMethod.GET)
 	public ModelAndView addDogToShelter(Dog dog)  {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.setViewName("dogs.jsp");
+		mv.addObject("dogs", shelterDAO.addDogToShelter(dog));
 		return mv;
 	}
 	
@@ -114,8 +112,9 @@ public class ShelterController {
 	@RequestMapping(path = "removeDogFromShelter.do", params = "remove", method = RequestMethod.GET)
 	public ModelAndView removeDogFromShelter(@RequestParam("name") String remD) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
+		mv.setViewName("dogs.jsp");
 		mv.addObject("result");
+		mv.addObject("dogs", shelterDAO.removeDogFromShelter(remD));
 		return mv;
 		
 	}
@@ -136,13 +135,6 @@ public class ShelterController {
 	}
 	
 
-	@RequestMapping(path = "getDogByAge.do", params = "getByAge", method = RequestMethod.GET)
-	public ModelAndView getDogByAge(@RequestParam("name") String da) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
-		return mv;
-	}
 	
 
 	@RequestMapping(path = "getDogByGender.do", params = "getByGender", method = RequestMethod.GET)
