@@ -10,6 +10,10 @@ public class Cat {
 	private String gender;
 	private ArrayList<String> notes;
 	
+	public Cat(){
+		
+	}
+	
 	public Cat(String name, String age, String color, String size, String gender) {
 		super();
 		this.name = name;

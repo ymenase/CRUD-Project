@@ -55,20 +55,34 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public void addCatToShelter(Cat cat) {
-		// TODO Auto-generated method stub
+	public ArrayList<Cat> addCatToShelter(Cat cat) {
+		cats.add(cat);
+		for (Cat c : cats) {
+			System.out.println(c);
+		}
+		return cats;
 		
 	}
 
 	@Override
-	public void removeCatFromShelter(String rc) {
-		// TODO Auto-generated method stub
-		
+	public ArrayList<Cat> removeCatFromShelter(String rc) {
+		Cat cat = null;
+		for (Cat c: cats) {
+			if (c.getName().equals(rc)) {
+				cat = c;
+			}
+		}
+		cats.remove(cat);
+		return cats;
 	}
 
 	@Override
-	public void addCatNotes(String addCN) {
-		// TODO Auto-generated method stub
+	public ArrayList<Cat> addCatNotes(String addCN) {
+//		cats.add(addCN);
+		for (Cat c: cats) {
+			
+		}
+		return cats;
 		
 	}
 
@@ -80,7 +94,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@Override
 	public void getCatByAge(String ca) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

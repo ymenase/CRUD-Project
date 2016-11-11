@@ -8,9 +8,9 @@ import entities.Dog;
 public interface ShelterDAO {
 	public ArrayList<Cat> getCats();
 	public ArrayList<Dog> getDogs();
-	public void addCatToShelter(Cat cat);
-	public void removeCatFromShelter(String rc);
-	public void addCatNotes(String addCN);
+	public ArrayList<Cat> addCatToShelter(Cat cat);
+	public ArrayList<Cat> removeCatFromShelter(String rc);
+	public ArrayList<Cat> addCatNotes(String addCN);
 	public void updateCatNotes (String updCN);
 	public void getCatByAge(String ca);
 	public void getCatByGender(String cg);

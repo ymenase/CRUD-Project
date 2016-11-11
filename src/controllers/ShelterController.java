@@ -38,24 +38,24 @@ public class ShelterController {
 	public ModelAndView addCatToShelter(Cat cat)  {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.addObject("cats", shelterDAO.addCatToShelter(cat));
 		return mv;
 	}
 	
 
-	@RequestMapping(path = "removeCatFromShelter.do", params = "remove", method = RequestMethod.GET)
+	@RequestMapping("removeCatFromShelter.do")
 	public ModelAndView removeCatFromShelter(@RequestParam("name") String rc) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		mv.addObject("result");
+		mv.addObject("cats", shelterDAO.removeCatFromShelter(rc));
 		return mv;
 		
 	}
 	@RequestMapping(path = "addCatNotes.do", params = "notes", method = RequestMethod.GET)
-	public ModelAndView addCatNotes(@RequestParam("name") String addCN) {
+	public ModelAndView addCatNotes(String addCN) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result");
-		mv.addObject("result");
+		mv.addObject("cats", shelterDAO.addCatNotes(addCN));
 		return mv;
 	}
 
