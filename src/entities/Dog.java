@@ -8,14 +8,16 @@ public class Dog {
 	private String breed;
 	private String gender;
 	private String note;
+	private String image;
 	
-	public Dog(String name, String age, String breed, String gender, String note) {
+	public Dog(String name, String age, String breed, String gender, String note, String image) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.breed = breed;
 		this.gender = gender;
 		this.note = note;
+		this.image = image;
 	}
 
 	public Dog() {
@@ -60,5 +62,12 @@ public class Dog {
 	
 	public void setNote(String note){
 		this.note = note;
+	}
+	public String getImage(){
+		return image;
+	}
+	
+	public void setImage(String image){
+		this.image = image;
 	}
 }

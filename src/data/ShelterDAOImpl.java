@@ -58,7 +58,8 @@ public class ShelterDAOImpl implements ShelterDAO {
 				String breed = tokens[2];
 				String gender = tokens[3];
 				String note = tokens[4];
-				Dog dog = new Dog(name, age, breed, gender, note);
+				String image = tokens[5];
+				Dog dog = new Dog(name, age, breed, gender, note, image);
 				dogs.add(dog);
 				System.out.println(dog);
 			}

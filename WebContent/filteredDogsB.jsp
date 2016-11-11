@@ -14,5 +14,7 @@ Here are your dogs<br/>
 ${dogB.age}</br>
 ${dogB.breed}</br>
 ${dogB.gender} </br>
+${dogB.note} </br>
+<img src="${dogB.image}" /> <br />
 	</c:forEach>
 </body>

@@ -18,7 +18,7 @@
 	<form action="filteredDogsByBreed.do">
 		Filter By Breed <select name="breed">
 			<option value="select">Select...</option>
-			<option value="Ghihuahua">Chihuahua</option>
+			<option value="Chihuahua">Chihuahua</option>
 			<option value="German Shepard">German Shepard</option>
 			<option value="Havanese">Havanese</option>
 			<option value="Labrador">Labrador</option>
@@ -36,7 +36,8 @@
 		<strong>${a.name}</strong>
 ${a.age}
 ${a.breed}
-${a.gender} <br />
+${a.gender}
+<img src="${a.image}" /> <br />
 
 		<form action="removeDogFromShelter.do">
 			<button class="button" name="remove" value="${a.name}">Remove

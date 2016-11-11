@@ -119,10 +119,9 @@ public class ShelterController {
 	public ModelAndView clearDogNotes(@RequestParam("clear") String name){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
-		mv.addObject("cats", shelterDAO.clearCatNotes(name)); //return cats from DAO and updated note view
+		mv.addObject("dogs", shelterDAO.clearDogNotes(name));
 		return mv;
 	}
-	
 
 	@RequestMapping(path = "filterDogsByGender.do", method = RequestMethod.GET)
 	public ModelAndView getDogByGender(@RequestParam("gender") String dg) {
