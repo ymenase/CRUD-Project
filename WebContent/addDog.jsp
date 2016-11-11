@@ -7,7 +7,7 @@
 <title>Add a Dog</title>
 </head>
 <body>
-<form action="addCatToShelter.do">
+<form action="addDogToShelter.do">
 Name <input type="text" name ="name" value=""/>
 Age<input type="text" name ="age" value=""/>
 Breed <input type="text" name ="breed" value=""/>

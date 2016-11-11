@@ -20,6 +20,9 @@ public interface ShelterDAO {
 	public void updateDogNotes (String updDN);
 	public void getDogByGender(String dg);
 	public void getBySize(String dsz);
+	public ArrayList<Dog> getAllDogs();
+	public ArrayList<Dog> getAllCats();
+	
 	
 	
 }

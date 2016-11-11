@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import data.ShelterDAO;
 import entities.Cat;
 import entities.Dog;
-
+	
 @Controller
 public class ShelterController {
 	@Autowired
@@ -18,28 +18,20 @@ public class ShelterController {
 	
 	
 	@RequestMapping("catsIndex.do")
-	public ModelAndView catsIndex(){
+	public ModelAndView getAllCats(){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
 		mv.addObject("cats", shelterDAO.getCats());
 		return mv;
 	}
 	@RequestMapping("dogsIndex.do")
-	public ModelAndView dogsIndex(){
+	public ModelAndView getAllDogs(){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("dogs.jsp");
 		mv.addObject("dogs", shelterDAO.getDogs());
 		return mv;
 	}
 	
-	
-	@RequestMapping(path = "getAllCats.do", params =  "all", method = RequestMethod.GET)
-	public ModelAndView getAllCats(){
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
-		mv.addObject("result");
-		return mv;
-	}
 	
 	@RequestMapping(path = "addCatToShelter.do", params = "add", method = RequestMethod.GET)
 	public ModelAndView addCatToShelter(Cat cat)  {
@@ -49,8 +41,8 @@ public class ShelterController {
 		return mv;
 	}
 	
-	@RequestMapping("removeCatFromShelter.do")
-	public ModelAndView removeCatFromShelter(@RequestParam("name") String rc) {
+	@RequestMapping(path = "removeCatFromShelter.do", params = "remove", method = RequestMethod.GET)
+	public ModelAndView removeCatFromShelter(@RequestParam("remove") String rc) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index.jsp");
 		mv.addObject("cats", shelterDAO.removeCatFromShelter(rc));
@@ -92,14 +84,6 @@ public class ShelterController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "getAllDogs.do", params =  "all", method = RequestMethod.GET)
-	public ModelAndView getAllDogs(){
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("dogs.jsp");
-		mv.addObject("result");
-		return mv;
-	}
-	
 	@RequestMapping(path = "addDogToShelter.do", params = "add", method = RequestMethod.GET)
 	public ModelAndView addDogToShelter(Dog dog)  {
 		ModelAndView mv = new ModelAndView();
@@ -110,10 +94,9 @@ public class ShelterController {
 	
 
 	@RequestMapping(path = "removeDogFromShelter.do", params = "remove", method = RequestMethod.GET)
-	public ModelAndView removeDogFromShelter(@RequestParam("name") String remD) {
+	public ModelAndView removeDogFromShelter(@RequestParam("remove") String remD) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("dogs.jsp");
-		mv.addObject("result");
 		mv.addObject("dogs", shelterDAO.removeDogFromShelter(remD));
 		return mv;
 		

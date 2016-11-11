@@ -58,7 +58,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 					String name = tokens[0];
 					String age = tokens[1];
 					String breed = tokens[2];
-					String gender = tokens[4];
+					String gender = tokens[3];
 					Dog dog = new Dog(name, age, breed, gender);
 					dogs.add(dog);
 					System.out.println(dog);
@@ -68,11 +68,6 @@ public class ShelterDAOImpl implements ShelterDAO {
 			}
 		}
 
-	@Override
-	public ArrayList<Dog> getDogs() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public ArrayList<Cat> addCatToShelter(Cat cat) {
@@ -146,7 +141,6 @@ public class ShelterDAOImpl implements ShelterDAO {
 		}
 		dogs.remove(dog);
 		return dogs;
-		
 	}
 
 	@Override
@@ -182,5 +176,23 @@ public class ShelterDAOImpl implements ShelterDAO {
 	@Override
 	public ArrayList<Cat> getCats() {
 		return cats;
+	}
+	@Override
+	public ArrayList<Dog> getDogs() {
+		return dogs;
+	}
+
+
+	@Override
+	public ArrayList<Dog> getAllDogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public ArrayList<Dog> getAllCats() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

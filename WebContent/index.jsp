@@ -37,8 +37,7 @@ ${a.gender} <br />
 
 
 		<form action="removeCatFromShelter.do">
-			<input type="hidden" name="name" value="${a.name}" />
-			<button class="button" name="param" value="remove">Remove
+			<button class="button" name="remove" value="${a.name}">Remove
 				Cat</button>
 		</form>
 
