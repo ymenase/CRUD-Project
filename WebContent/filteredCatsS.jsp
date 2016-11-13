@@ -15,5 +15,6 @@ ${catS.age}</br>
 ${catS.color}</br>
 ${catS.size} </br>
 ${catS.gender}</br>
+${catS.image}</br>
 	</c:forEach>
 </body>

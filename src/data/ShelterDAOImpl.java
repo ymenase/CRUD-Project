@@ -39,7 +39,8 @@ public class ShelterDAOImpl implements ShelterDAO {
 				String size = tokens[3];
 				String gender = tokens[4];
 				String note = tokens[5];
-				Cat cat = new Cat(name, age, color, size, gender, note);
+				String image = tokens[6];
+				Cat cat = new Cat(name, age, color, size, gender, note, image);
 				cats.add(cat);
 				System.out.println(cat);
 			}
@@ -131,7 +132,7 @@ public class ShelterDAOImpl implements ShelterDAO {
 	}
 
 	@Override
-	public ArrayList<Cat> getCatsBySize(String csize) {
+	public ArrayList<Cat> getCatsBySize(String csize) { //compare sort request to current cats
 		ArrayList<Cat> filteredCatsS = new ArrayList<Cat>();
 		for (Cat c : cats) {
 			if (c.getSize().equals(csize)) {
@@ -152,13 +153,13 @@ public class ShelterDAOImpl implements ShelterDAO {
 
 	@Override
 	public ArrayList<Dog> removeDogFromShelter(String remD) {
-		Dog dog = new Dog();
+		Dog dog = new Dog();          //iterate through array to find the dog that matches
 		for (Dog d : dogs) {
 			if (d.getName().equals(remD)) {
 				dog = d;
 			}
 		}
-		dogs.remove(dog);
+		dogs.remove(dog);         //remove selected dog
 		return dogs;
 	}
 
@@ -170,8 +171,8 @@ public class ShelterDAOImpl implements ShelterDAO {
 				dog = d;
 			}
 		}
-		StringBuilder sb = new StringBuilder();
-		String oldNote = dog.getNote();
+		StringBuilder sb = new StringBuilder(); // take input from new note and append 
+		String oldNote = dog.getNote(); //to new note
 		sb.append(oldNote);
 		sb.append(" ");
 		sb.append(note);

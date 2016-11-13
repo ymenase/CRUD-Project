@@ -9,12 +9,13 @@ public class Cat {
 	private String size;
 	private String gender;
 	private String note;
+	private String image;
 	
 	public Cat(){
 		
 	}
 	
-	public Cat(String name, String age, String color, String size, String gender, String note) {
+	public Cat(String name, String age, String color, String size, String gender, String note, String image) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -22,6 +23,7 @@ public class Cat {
 		this.size = size;
 		this.gender = gender;
 		this.note = note;
+		this.image = image;
 	}
 
 
@@ -73,6 +75,14 @@ public class Cat {
 	
 	public void setNote(String note){
 		this.note = note;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 		
 }

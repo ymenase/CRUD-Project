@@ -37,6 +37,7 @@ ${a.age}
 ${a.color}
 ${a.size} 
 ${a.gender}
+<img src="${a.image}">
 <br />
 
 		<form action="removeCatFromShelter.do">

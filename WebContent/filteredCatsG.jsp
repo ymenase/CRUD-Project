@@ -15,5 +15,6 @@ ${cat.age}</br>
 ${cat.color}</br>
 ${cat.size} </br>
 ${cat.gender}</br>
+<img src="${cat.image}" /> <br />
 	</c:forEach>
 </body>
