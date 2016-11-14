@@ -18,7 +18,7 @@
       <a class="navbar-brand">Adoptable Dogs from the Denver Animal Shelter</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="index.jsp">All Cats</a></li>
       <li><a href="dogs.jsp">All Dogs</a></li>
       <li><a href="about.html">About</a></li>
@@ -34,4 +34,7 @@ ${dog.gender}
 ${dog.note} 
 <img src="${dog.image}" /> <br />
 	</c:forEach>
+	<footer class="container-fluid bg-4 text-center" id="footer">
+	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
+		</footer>
 </body>

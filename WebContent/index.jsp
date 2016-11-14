@@ -6,8 +6,7 @@
 <link rel="stylesheet" href="styles.css">
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css?family=Oxygen"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Cat List</title>
 </head>
@@ -18,7 +17,7 @@
 				<a class="navbar-brand">Adoptable Cats from Angels With Paws</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="dogs.jsp">All Dogs</a></li>
 			</ul>
@@ -86,5 +85,8 @@ ${a.gender}<br />
 			</div>
 		</div>
 		<div>
+		<footer class="container-fluid text-center" id="footer">
+	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
+		</footer>
 </body>
 </html>

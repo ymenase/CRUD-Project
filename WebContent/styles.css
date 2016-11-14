@@ -1,7 +1,11 @@
 body {
 	background-color: #E57606;
 	padding: 50px;
+	padding-top: 60px;
+	padding-bottom: 0px;
 	font-family: 'Oxygen', sans-serif;
+	color: #7F5008;
+	margin-left: 50px;
 }
 
 img {
@@ -11,10 +15,30 @@ img {
 	padding: 20px;
 }
 
-  .container-fluid2 {
-      padding-bottom: 70px;
-  }
+
+#footer{
+	padding-bottom: 0px;
+}
   
   .row{
   padding: 20px;
   }
+  
+  .container-fluid{
+  background-color: #7F5008;
+  color: #FFEC83;
+  }
+  
+  
+a:link {
+    color: #FFEC83;
+}
+
+a:visited {
+    color: #7F5008;
+}
+
+a:hover {
+    color: #BFBC07;
+}
+

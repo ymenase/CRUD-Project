@@ -21,7 +21,7 @@
 					Shelter</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="index.jsp">All Cats</a></li>
 				<li><a href="about.html">About</a></li>
 			</ul>
@@ -90,5 +90,8 @@ ${a.gender}<br />
 			</div>
 		</div>
 	</div>
+	<footer class="container-fluid text-center" id="footer">
+	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
+		</footer>
 </body>
 </html>
