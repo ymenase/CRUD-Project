@@ -2,17 +2,23 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- Latest compiled and minified CSS -->
+<html>
+<head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="styles.css">
-<html>
-<head>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Oxygen"
 	rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add a Cat</title>
 </head>
 <body>
+<div class="container1">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -20,9 +26,9 @@
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="index.html">Home</a></li>
+			<li><a href="catsIndex.do">All Cats</a></li>
+			<li><a href="dogsIndex.do">All Dogs</a></li>
 			<li><a href="about.html">About</a></li>
-			<li><a href="index.jusp">All Cats</a></li>
-			<li><a href="dogs.jsp">All Dogs</a></li>
 		</ul>
 	</div>
 	</nav>
@@ -53,8 +59,9 @@
 		</select> 
 		<button class="button" name="add" value="add">Submit Cat</button>
 	</form>
+	</div>
 	<footer class="container-fluid text-center" id="footer">
-	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
+	  		<div id="footer">Yvette Menase | Skill Distillery SD7 | Week 7 Project</div>
 		</footer>
 </body>
 </html>

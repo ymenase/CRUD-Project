@@ -1,16 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!-- Latest compiled and minified CSS -->
+<html lang="en">
+<head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="styles.css">
-<html lang="en">
-<head>
 <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Cat List</title>
 </head>
 <body>
+<div class="container1">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -19,7 +20,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
-				<li><a href="dogs.jsp">All Dogs</a></li>
+				<li><a href="dogsIndex.do">All Dogs</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -84,7 +85,7 @@ ${a.gender}<br />
 				</c:forEach>
 			</div>
 		</div>
-		<div>
+		</div>
 		<footer class="container-fluid text-center" id="footer">
 	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
 		</footer>
