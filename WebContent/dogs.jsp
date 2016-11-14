@@ -55,10 +55,10 @@
 			<input type="submit" value="Add Dog">
 		</form>
 		<h1>Current Dog Information and Notes</h1>
+					<c:forEach var="a" items="${dogs}">
 		<div class="container-fluid2">
 			<div class=row>
 				<div class="col-sm-6">
-					<c:forEach var="a" items="${dogs}">
 					<p class="name">${a.name}</p>
 					<br />
 					${a.age}<br />
@@ -83,16 +83,14 @@
 						<br />
 						<br />
 
-					</c:forEach>
 				</div>
 				<div class="col-sm-6">
-					<c:forEach var="a" items="${dogs}">
 						<img src="${a.image}" />
 						<br />
-					</c:forEach>
 				</div>
 			</div>
 		</div>
+					</c:forEach>
 	</div>
 	<footer class="container-fluid text-center" id="footer">
 		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>

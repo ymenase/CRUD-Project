@@ -48,16 +48,16 @@
 		<input type="submit" value="Add Cat">
 	</form>
 	<h1>Current Cat Information and Notes</h1>
-	<div class="container-fluid2">
-		<div class=row>
-			<div class="col-sm-6">
 				<c:forEach var="a" items="${cats}">
+	<div class="container-fluid2">
+		<div class="row">
+			<div class="col-sm-6">
 					<p class="name">${a.name}</p>
 					
-${a.age}<br />
-${a.color}<br />
-${a.size} <br />
-${a.gender}<br />
+					${a.age}<br />
+					${a.color}<br />
+					${a.size} <br />
+					${a.gender}<br />
 
 					<form action="removeCatFromShelter.do">
 						<button class="button" name="remove" value="${a.name}">Remove
@@ -76,15 +76,14 @@ ${a.gender}<br />
 					</form>
 
 					<br />
-				</c:forEach>
 			</div>
 			<div class="col-sm-6">
-				<c:forEach var="a" items="${cats}">
 					<img src="${a.image}" />
 					<br />
-				</c:forEach>
+			</div>
 			</div>
 		</div>
+		</c:forEach>
 		</div>
 		<footer class="container-fluid text-center" id="footer">
 	  		<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>

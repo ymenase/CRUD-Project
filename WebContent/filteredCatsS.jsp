@@ -30,7 +30,10 @@
 		</nav>
 		<h1>Cats By Size</h1>
 		<br />
-		<c:forEach var="catS" items="${catsBySize}">
+			<c:forEach var="catS" items="${catsBySize}">
+		<div class="container-fluid2">
+		<div class="row">
+			<div class="col-sm-6">
 			<p class="name">${catS.name}</p>
 ${catS.age}<br />
 ${catS.color}<br />
@@ -38,7 +41,10 @@ ${catS.size} <br />
 ${catS.gender}<br />
 			<img src="${catS.image}">
 			<br />
-		</c:forEach>
+		</div>
+		</div>
+		</div>
+	</c:forEach>
 	</div>
 	<footer class="container-fluid text-center" id="footer">
 	<p>Yvette Menase | Skill Distillery SD7 | Week 7 Project</p>
