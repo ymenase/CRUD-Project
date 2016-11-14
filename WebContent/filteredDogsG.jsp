@@ -31,13 +31,14 @@
 			</ul>
 		</div>
 		</nav>
-		Here are your dogs<br />
+		Here are dogs by selected breed:<br />
+		<br />
 		<c:forEach var="dog" items="${dogsByGender}">
-			<strong>${dog.name}</strong>
-${dog.age}
-${dog.breed}
-${dog.gender} 
-${dog.note} 
+			<p class="name">${dog.name}</p>
+${dog.age}<br />
+${dog.breed}<br />
+${dog.gender}<br /> 
+${dog.note} <br />
 <img src="${dog.image}" />
 			<br />
 		</c:forEach>

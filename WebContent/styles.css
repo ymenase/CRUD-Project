@@ -24,6 +24,10 @@ img {
 	padding-left: 0px;
 	width: 100%;
 }
+
+.name {
+	font-weight: bold;
+}
   
   .row{
   padding: 20px;
@@ -40,7 +44,7 @@ a:link {
 }
 
 a:visited {
-    color: #7F5008;
+    color: #403F02;
 }
 
 a:hover {

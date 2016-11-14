@@ -52,8 +52,8 @@
 		<div class=row>
 			<div class="col-sm-6">
 				<c:forEach var="a" items="${cats}">
-					<strong>${a.name}</strong>
-					<br />
+					<p class="name">${a.name}</p>
+					
 ${a.age}<br />
 ${a.color}<br />
 ${a.size} <br />

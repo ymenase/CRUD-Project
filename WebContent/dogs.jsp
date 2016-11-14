@@ -59,7 +59,7 @@
 			<div class=row>
 				<div class="col-sm-6">
 					<c:forEach var="a" items="${dogs}">
-					${a.name}
+					<p class="name">${a.name}</p>
 					<br />
 					${a.age}<br />
 					${a.breed}<br />

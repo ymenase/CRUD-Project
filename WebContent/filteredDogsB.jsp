@@ -34,7 +34,7 @@
 		<h1>Dogs by Selected Breed</h1>
 		<br />
 		<c:forEach var="dogB" items="${dogsByBreed}">
-			<strong>${dogB.name}</strong>
+			<p class="name">${dogB.name}</p>
 ${dogB.age}</br>
 ${dogB.breed}</br>
 ${dogB.gender} </br>

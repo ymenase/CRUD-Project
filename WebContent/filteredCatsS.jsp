@@ -31,8 +31,7 @@
 		<h1>Cats By Size</h1>
 		<br />
 		<c:forEach var="catS" items="${catsBySize}">
-			<strong>${catS.name}</strong>
-			<br />
+			<p class="name">${catS.name}</p>
 ${catS.age}<br />
 ${catS.color}<br />
 ${catS.size} <br />

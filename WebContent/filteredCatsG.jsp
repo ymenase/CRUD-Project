@@ -40,7 +40,7 @@
 				<div class="col-sm-6">
 					<p>
 						<c:forEach var="cat" items="${catsByGender}">
-			${cat.name}<br />
+			<p class="name">${cat.name}</p><br />
 ${cat.age}</br>
 ${cat.color}</br>
 ${cat.size} </br>

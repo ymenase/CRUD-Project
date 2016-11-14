@@ -118,7 +118,7 @@ public class ShelterController {
 	@RequestMapping(path = "clearDogNotes.do", method = RequestMethod.GET)
 	public ModelAndView clearDogNotes(@RequestParam("clear") String name){
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index.jsp");
+		mv.setViewName("dogs.jsp");
 		mv.addObject("dogs", shelterDAO.clearDogNotes(name));
 		return mv;
 	}
