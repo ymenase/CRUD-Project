@@ -1,0 +1,20 @@
+body {
+	background-color: #E57606;
+	padding: 50px;
+	font-family: 'Oxygen', sans-serif;
+}
+
+img {
+	border-radius: 30px;
+	height: 220px;
+	width: 260px;
+	padding: 20px;
+}
+
+  .container-fluid2 {
+      padding-bottom: 70px;
+  }
+  
+  .row{
+  padding: 20px;
+  }
