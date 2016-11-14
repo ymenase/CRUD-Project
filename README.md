@@ -6,7 +6,11 @@
 		choose between viewing adoptable dogs or adoptable cats. You can add
 		your own animal, and update the notes for each as well. The first
 		information you add will be stored in "Current note" and further notes
-		are appended. You can remove any animal from the list. These are real animals
+		are appended. You can remove any animal from the list. In the future, I want to add 
+		warning message asking if the users are sure they want to remove the animal.
+		Also I would like to put two columns in the filtered pages. 
+		
+		These are real animals
 		who would love to find a forever home. Any action done on this website has
 		no link to these organizations themselves.
 
